@@ -1,6 +1,6 @@
 from typing import List
 
-def twoSum(self, nums: List[int], target: int) -> List[int]:
+def twoSum(nums: List[int], target: int) -> List[int]:
 	d = {} # значение - индекс значения
 	for i in range(len(nums)):
 		n = target - nums[i]

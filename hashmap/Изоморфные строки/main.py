@@ -1,4 +1,4 @@
-def isIsomorphic(self, s: str, t: str) -> bool:
+def isIsomorphic(s: str, t: str) -> bool:
 	if len(s) != len(t): return False
 
 	posS = {}  # кл - символ, зн - массив того, где встречаются
