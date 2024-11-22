@@ -1,0 +1,30 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        d = {}
+
+        for i in nums:
+            if i in d:
+                d[i] += 1
+            else:
+                d[i] = 1
+        
+        fr = [[] for _ in range(len(nums) + 1)] 
+
+        for k in d:
+            fr[d[k]].append(k)
+
+        res = []
+        for i in range(len(nums), 0, -1):
+            for j in fr[i]:
+                res.append(j)
+                k-=1
+                if k <= 0:
+                    break
+
+        return res
+
+
+Изначально было так, не проходило (я затупыч). Дело в моей внимательности, а точнее в её отсутствии.
+Первая проблема в 22 строке, break выходил из for j in fr[i]:, а не основного цикла. 
+В 11 строке я ввёл переменную для хранения ключа.
+Проблема в том, что глобальное k меняло своё значение. изменив на key проблема ушла, как и я спать. 
