@@ -18,3 +18,10 @@ class Solution:
 
         return True
 
+# или же
+# class Solution:
+#     def can_permute_palindrome(self, s: str) -> bool:
+#         arr = [0] * 26
+#         for c in s:
+#             arr[ord(c) - ord("a")] ^= 1
+#         return sum(arr) <= 1
