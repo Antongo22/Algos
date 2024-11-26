@@ -1,0 +1,17 @@
+Для начала решил так, чтобы просто запомнить, что так можно - 
+class Solution:
+    def pivotIndex(self, nums: List[int]) -> int:
+        prefix_array = [0]
+        suffix_array = [0 for _ in range(len(nums) + 1)]
+        
+        for i in range(len(nums)):
+            prefix_array.append(prefix_array[-1] + nums[i])
+            
+        for i in reversed(range(len(nums))):
+            suffix_array[i] = suffix_array[i+1] + nums[i]
+        
+        for i in range(len(nums)):
+            if prefix_array[i+1] == suffix_array[i]:
+                return i
+        
+        return -1                
