@@ -224,22 +224,22 @@ from typing import List
 #     return unique / total
 
 
-class Solution:
-    def peakIndexInMountainArray(self, arr: List[int]) -> int:
-        l, r = 0, len(arr)
-
-        while r - l > 1:
-            mid = (r + l) // 2
-
-            if arr[mid - 1] < arr[mid]:
-                l = mid
-            else:
-                r = mid
-
-        return l
-
-
-
+# class Solution:
+#     def peakIndexInMountainArray(self, arr: List[int]) -> int:
+#         l, r = 0, len(arr)
+#
+#         while r - l > 1:
+#             mid = (r + l) // 2
+#
+#             if arr[mid - 1] < arr[mid]:
+#                 l = mid
+#             else:
+#                 r = mid
+#
+#         return l
+#
+#
+#
 
 
 
